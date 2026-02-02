@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você 🤍</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(180deg, #fff0f3, #ffffff);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 40px 20px;
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    color: #c9184a;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 18px;
+    margin-top: 22px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.signature {
+    margin-top: 40px;
+    font-style: italic;
+    color: #555;
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Flores e Corações */
+.fall {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Oi, meu amor 🤍</h1>
+
+    <p>
+        Se você está lendo isso, é porque eu quis transformar sentimentos
+        em algo que ficasse guardado no tempo.
+    </p>
+
+    <p>
+        Amar você é fácil. É leve. É verdadeiro.<br>
+        Em você eu encontrei casa, paz e certeza.
+    </p>
+
+    <p>
+        Obrigado por caminhar comigo, por crescer comigo
+        e por ser exatamente quem você é.
+    </p>
+
+    <div class="gallery">
+        <img src="foto1.jpg" alt="Eu semi-feio">
+        <img src="foto2.jpg" alt="Você Bestaferamente Linda!">
+        <img src="foto3.jpg" alt="Eu tentando explodir">
+        <img src="foto4.jpg" alt="Você tentando ser feia (falhando miseravelmente)">
+    </div>
+
+    <p class="signature">
+        Com todo o meu amor,<br>
+        Yuri31cm (de pé) 
+    </p>
+</div>
+
+<script>
+function criarElemento() {
+    const el = document.createElement("div");
+    el.className = "fall";
+    el.innerHTML = Math.random() > 0.5 ? "🌸" : "❤";
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = (4 + Math.random() * 6) + "s";
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 10000);
+}
+
+setInterval(criarElemento, 500);
+</script>
+
+</body>
+</html>
