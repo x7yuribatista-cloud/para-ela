@@ -5,17 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Você 🤍</title>
 
+<!-- Fonte Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(180deg, #fff0f3, #ffffff);
     text-align: center;
     overflow-x: hidden;
 }
 
 .container {
-    max-width: 650px;
+    max-width: 720px;
     margin: auto;
     padding: 40px 20px;
     animation: fadeIn 2s ease;
@@ -23,28 +26,55 @@ body {
 
 h1 {
     color: #c9184a;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 p {
-    font-size: 18px;
+    font-size: 17px;
     color: #333;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 20px;
+    font-weight: 400;
 }
 
-.gallery img {
+/* Grade de fotos */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.photo-card {
+    text-align: center;
+}
+
+.photo-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: 500;
+}
+
+.photo-card img {
     width: 100%;
-    border-radius: 18px;
-    margin-top: 22px;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
 
 .signature {
-    margin-top: 40px;
+    margin-top: 45px;
     font-style: italic;
     color: #555;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 @keyframes fadeIn {
@@ -52,7 +82,7 @@ p {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Flores e Corações */
+/* Flores e corações */
 .fall {
     position: fixed;
     top: -10px;
@@ -91,15 +121,30 @@ p {
     </p>
 
     <div class="gallery">
-        <img src="foto1.jpg" alt="Eu semi-feio">
-        <img src="foto2.jpg" alt="Você Bestaferamente Linda!">
-        <img src="foto3.jpg" alt="Eu tentando explodir">
-        <img src="foto4.jpg" alt="Você tentando ser feia (falhando miseravelmente)">
+        <div class="photo-card">
+            <div class="photo-title">Seu olhar</div>
+            <img src="foto1.jpg" alt="Foto 1">
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-title">Seu sorriso</div>
+            <img src="foto2.jpg" alt="Foto 2">
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-title">Nós</div>
+            <img src="foto3.jpg" alt="Foto 3">
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-title">Momentos nossos</div>
+            <img src="foto4.jpg" alt="Foto 4">
+        </div>
     </div>
 
     <p class="signature">
         Com todo o meu amor,<br>
-        Yuri31cm (de pé) 
+        Yuri
     </p>
 </div>
 
@@ -109,13 +154,13 @@ function criarElemento() {
     el.className = "fall";
     el.innerHTML = Math.random() > 0.5 ? "🌸" : "❤";
     el.style.left = Math.random() * 100 + "vw";
-    el.style.animationDuration = (4 + Math.random() * 6) + "s";
+    el.style.animationDuration = (5 + Math.random() * 6) + "s";
     document.body.appendChild(el);
 
-    setTimeout(() => el.remove(), 10000);
+    setTimeout(() => el.remove(), 11000);
 }
 
-setInterval(criarElemento, 500);
+setInterval(criarElemento, 600);
 </script>
 
 </body>
